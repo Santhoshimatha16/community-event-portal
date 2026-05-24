@@ -5,473 +5,602 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Community Event Portal</title>
+
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-    #welcomeBanner {
-        background-color: blue;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        border-radius: 10px;
-    }
+        nav {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+        }
 
-    .highlight {
-        background-color: yellow;
-        font-weight: bold;
-        padding: 3px;
-    }
-    .gallery-img {
-    width: 200px;
-    height: 130px;
-    border: 3px solid black;
-    border-radius: 10px;
-    padding: 5px;
-    }
-    form {
-    width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    background-color: #f2f2f2;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
 
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
+        nav a:hover {
+            color: yellow;
+        }
 
-button {
-    background-color: blue;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        #welcomeBanner {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
 
-button:hover {
-    background-color: darkblue;
-}
-.enlarged {
-    transform: scale(1.5);
-    transition: 0.3s;
-}
-</style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+            padding: 3px;
+        }
+
+        .gallery-img {
+            width: 200px;
+            height: 130px;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        form {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        .enlarged {
+            transform: scale(1.5);
+            transition: 0.3s;
+        }
+
+        .promo-video {
+            width: 100%;
+            max-width: 400px;
+            border: 3px solid gray;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        #videoInvite {
+            text-align: center;
+        }
+
+        section {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 
-<body>
+<body onload="loadPreference()">
 
     <!-- Navigation -->
+
     <nav>
-        <a href="#home">Home</a> |
-        <a href="#events">Events</a> |
-        <a href="#contact">Contact</a> |
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#registration">Register</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#contact">Contact</a>
         <a href="help.html" target="_blank">Help</a>
     </nav>
+
     <!-- Welcome Banner -->
 
-<div id="welcomeBanner">
+    <div id="welcomeBanner">
 
-    <h2>Welcome Back, Resident!</h2>
+        <h2>Welcome Back, Resident!</h2>
 
-    <p>
-        Register today and get
-        <span style="color: red; font-weight: bold;">
-            20% discount
-        </span>
-        on premium community events.
-    </p>
+        <p>
+            Register today and get
+            <span style="color: red; font-weight: bold;">
+                20% discount
+            </span>
+            on premium community events.
+        </p>
 
-</div>
+    </div>
 
     <hr>
 
     <!-- Home Section -->
+
     <section id="home">
+
         <h1>Welcome to the Community Event Portal</h1>
 
         <p>
             This portal helps residents register for events
             and access local community services.
         </p>
+
     </section>
 
     <hr>
 
     <!-- Events Section -->
+
     <section id="events">
+
         <h2>Upcoming Events</h2>
 
-       <p class="highlight">Music Festival - June 15</p>
-       <p class="highlight">Food Carnival - June 20</p>
+        <p class="highlight">Music Festival - June 15</p>
+
+        <p class="highlight">Food Carnival - June 20</p>
+
         <p class="highlight">Health Awareness Camp - June 25</p>
+
     </section>
 
     <hr>
+
     <!-- Image Gallery Section -->
 
-<section id="gallery">
+    <section id="gallery">
 
-    <h2>Community Event Gallery</h2>
+        <h2>Community Event Gallery</h2>
 
-    <table>
+        <table>
 
-        <tr>
+            <tr>
 
-            <td>
-                <img
-                    src="https://picsum.photos/200/130?1"
-                    alt="Music Festival"
-                    title="Music Festival"
-                    class="gallery-img">
+                <td>
+                    <img src="https://picsum.photos/200/130?1"
+                        alt="Music Festival"
+                        title="Music Festival"
+                        class="gallery-img">
 
-                <p>Music Festival 2025</p>
-            </td>
+                    <p>Music Festival 2025</p>
+                </td>
 
-            <td>
-                <img
-                    src="https://picsum.photos/200/130?2"
-                    alt="Food Carnival"
-                    title="Food Carnival"
-                    class="gallery-img">
+                <td>
+                    <img src="https://picsum.photos/200/130?2"
+                        alt="Food Carnival"
+                        title="Food Carnival"
+                        class="gallery-img">
 
-                <p>Food Carnival Celebration</p>
-            </td>
+                    <p>Food Carnival Celebration</p>
+                </td>
 
-            <td>
-                <img
-                    src="https://picsum.photos/200/130?3"
-                    alt="Health Camp"
-                    title="Health Camp"
-                    class="gallery-img">
+                <td>
+                    <img src="https://picsum.photos/200/130?3"
+                        alt="Health Camp"
+                        title="Health Camp"
+                        class="gallery-img">
 
-                <p>Health Awareness Camp</p>
-            </td>
+                    <p>Health Awareness Camp</p>
+                </td>
 
-        </tr>
+            </tr>
 
-        <tr>
+            <tr>
 
-            <td>
-                <img
-                    src="https://picsum.photos/200/130?4"
-                    alt="Sports Event"
-                    title="Sports Event"
-                    class="gallery-img">
+                <td>
+                    <img src="https://picsum.photos/200/130?4"
+                        alt="Sports Event"
+                        title="Sports Event"
+                        class="gallery-img">
 
-                <p>Annual Sports Meet</p>
-            </td>
+                    <p>Annual Sports Meet</p>
+                </td>
 
-            <td>
-                <img
-                    src="https://picsum.photos/200/130?5"
-                    alt="Tree Plantation"
-                    title="Tree Plantation"
-                    class="gallery-img">
+                <td>
+                    <img src="https://picsum.photos/200/130?5"
+                        alt="Tree Plantation"
+                        title="Tree Plantation"
+                        class="gallery-img">
 
-                <p>Tree Plantation Drive</p>
-            </td>
+                    <p>Tree Plantation Drive</p>
+                </td>
 
-            <td>
-                <img
-                    src="https://picsum.photos/200/130?6"
-                    alt="Cultural Event"
-                    title="Cultural Event"
-                    class="gallery-img">
+                <td>
+                    <img src="https://picsum.photos/200/130?6"
+                        alt="Cultural Event"
+                        title="Cultural Event"
+                        class="gallery-img">
 
-                <p>Cultural Night Program</p>
-            </td>
+                    <p>Cultural Night Program</p>
+                </td>
 
-        </tr>
+            </tr>
 
-    </table>
+        </table>
 
-</section>
+    </section>
 
-<!-- Event Registration Form -->
+    <hr>
 
-<section id="registration">
+    <!-- Registration Form -->
 
-    <h2>Event Registration Form</h2>
+    <section id="registration">
 
-    <form onsubmit="showMessage(); return false;">
+        <h2>Event Registration Form</h2>
 
-        <!-- Name -->
+        <form onsubmit="showMessage(); return false;">
 
-        <label for="name">Full Name:</label>
+            <!-- Name -->
+
+            <label for="name">Full Name:</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+                autofocus>
+
+            <!-- Email -->
+
+            <label for="email">Email Address:</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required>
+
+            <!-- Date -->
+
+            <label for="date">Event Date:</label>
+
+            <input
+                type="date"
+                id="date"
+                required>
+
+            <!-- Event Type -->
+
+            <label for="eventType">Select Event:</label>
+
+            <select
+                id="eventType"
+                required
+                onchange="savePreference()">
+
+                <option value="">-- Choose an Event --</option>
+
+                <option>Music Festival</option>
+
+                <option>Food Carnival</option>
+
+                <option>Health Camp</option>
+
+                <option>Sports Meet</option>
+
+            </select>
+
+            <!-- Message -->
+
+            <label for="message">Message:</label>
+
+            <textarea
+                id="message"
+                rows="4"
+                placeholder="Write your message here..."></textarea>
+
+            <!-- Submit Button -->
+
+            <button type="submit">
+                Register
+            </button>
+
+            <br><br>
+
+            <!-- Output -->
+
+            <output id="confirmation"></output>
+
+            <br><br>
+
+            <!-- Clear Button -->
+
+            <button
+                type="button"
+                onclick="clearPreferences()">
+
+                Clear Preferences
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <hr>
+
+    <!-- Feedback Section -->
+
+    <section id="feedback">
+
+        <h2>Event Feedback</h2>
+
+        <!-- Phone Validation -->
+
+        <label for="phone">Phone Number:</label>
 
         <input
             type="text"
-            id="name"
-            placeholder="Enter your full name"
-            required
-            autofocus>
+            id="phone"
+            placeholder="Enter 10-digit phone number"
+            onblur="validatePhone()">
 
-        <!-- Email -->
+        <p id="phoneMessage"></p>
 
-        <label for="email">Email Address:</label>
+        <!-- Event Fee -->
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            required>
+        <label for="eventSelect">Choose Event:</label>
 
-        <!-- Date -->
+        <select id="eventSelect" onchange="showFee()">
 
-        <label for="date">Event Date:</label>
+            <option value="">-- Select Event --</option>
 
-        <input
-            type="date"
-            id="date"
-            required>
+            <option value="100">Music Festival</option>
 
-        <!-- Event Type -->
+            <option value="150">Food Carnival</option>
 
-        <label for="eventType">Select Event:</label>
-
-        <select id="eventType" required>
-
-            <option value="">-- Choose an Event --</option>
-
-            <option>Music Festival</option>
-
-            <option>Food Carnival</option>
-
-            <option>Health Camp</option>
-
-            <option>Sports Meet</option>
+            <option value="200">Sports Meet</option>
 
         </select>
-        <!-- Event Feedback Section -->
 
-<section id="feedback">
+        <p id="feeDisplay"></p>
 
-    <h2>Event Feedback</h2>
+        <!-- Double Click Image -->
 
-    <!-- Phone Validation -->
+        <h3>Double Click Image to Enlarge</h3>
 
-    <label for="phone">Phone Number:</label>
-
-    <input
-        type="text"
-        id="phone"
-        placeholder="Enter 10-digit phone number"
-        onblur="validatePhone()">
-
-    <p id="phoneMessage"></p>
-
-    <br>
-
-    <!-- Event Fee Display -->
-
-    <label for="eventSelect">Choose Event:</label>
-
-    <select id="eventSelect" onchange="showFee()">
-
-        <option value="">-- Select Event --</option>
-
-        <option value="100">Music Festival</option>
-
-        <option value="150">Food Carnival</option>
-
-        <option value="200">Sports Meet</option>
-
-    </select>
-
-    <p id="feeDisplay"></p>
-
-    <br>
-
-    <!-- Double Click Image -->
-
-    <h3>Double Click Image to Enlarge</h3>
-
-    <img
-        src="https://picsum.photos/200/130"
-        id="eventImage"
-        ondblclick="enlargeImage()"
-        class="gallery-img"
-        alt="Event Image">
-
-    <br><br>
-
-    <!-- Feedback Textarea -->
-
-    <label for="feedbackText">Feedback:</label>
-
-    <textarea
-        id="feedbackText"
-        rows="4"
-        cols="40"
-        onkeyup="countCharacters()"
-        placeholder="Write your feedback..."></textarea>
-
-    <p>
-        Characters Typed:
-        <span id="charCount">0</span>
-    </p>
-
-    <br>
-
-    <!-- Submit Button -->
-
-    <button onclick="submitFeedback()">
-        Submit Feedback
-    </button>
-
-</section>
-<!-- Video Invite Section -->
-
-<section id="videoInvite">
-
-    <h2>Community Event Promo Video</h2>
-
-    <video
-        id="promoVideo"
-        width="500"
-        controls
-        oncanplay="videoReady()">
-
-        <source
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
-            type="video/mp4">
-
-        Your browser does not support video playback.
-
-    </video>
-
-    <p id="videoMessage"></p>
-
-</section>
-
-        <!-- Message -->
-
-        <label for="message">Message:</label>
-
-        <textarea
-            id="message"
-            rows="4"
-            placeholder="Write your message here..."></textarea>
-
-        <!-- Submit Button -->
-
-        <button type="submit">
-            Register
-        </button>
+        <img
+            src="https://picsum.photos/200/130"
+            id="eventImage"
+            ondblclick="enlargeImage()"
+            class="gallery-img"
+            alt="Event Image">
 
         <br><br>
 
-        <!-- Output Message -->
+        <!-- Feedback Textarea -->
 
-        <output id="confirmation"></output>
+        <label for="feedbackText">Feedback:</label>
 
-    </form>
+        <textarea
+            id="feedbackText"
+            rows="4"
+            onkeyup="countCharacters()"
+            placeholder="Write your feedback..."></textarea>
 
-</section>
+        <p>
+            Characters Typed:
+            <span id="charCount">0</span>
+        </p>
+
+        <!-- Submit -->
+
+        <button onclick="submitFeedback()">
+            Submit Feedback
+        </button>
+
+    </section>
+
+    <hr>
+
+    <!-- Video Invite Section -->
+
+    <section id="videoInvite">
+
+        <h2>Community Event Promo Video</h2>
+
+        <video
+            id="promoVideo"
+            class="promo-video"
+            controls
+            oncanplay="videoReady()">
+
+            <source
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                type="video/mp4">
+
+            Your browser does not support video playback.
+
+        </video>
+
+        <p id="videoMessage"></p>
+
+    </section>
+
+    <hr>
 
     <!-- Contact Section -->
+
     <section id="contact">
+
         <h2>Contact Us</h2>
 
         <p>Email: support@communityportal.com</p>
+
         <p>Phone: +91 9876543210</p>
+
     </section>
 
     <hr>
 
     <!-- Footer -->
+
     <footer>
+
         <p>© 2026 Local City Council</p>
+
     </footer>
 
     <script>
 
-    function showMessage() {
+        function showMessage() {
 
-        document.getElementById("confirmation").innerHTML =
-            "Registration completed successfully!";
-
-    }
-    function validatePhone() {
-
-    let phone =
-        document.getElementById("phone").value;
-
-    if (phone.length !== 10 || isNaN(phone)) {
-
-        document.getElementById("phoneMessage")
-            .innerHTML =
-            "Invalid phone number";
-
-        document.getElementById("phoneMessage")
-            .style.color = "red";
-
-    } else {
-
-        document.getElementById("phoneMessage")
-            .innerHTML =
-            "Valid phone number";
-
-        document.getElementById("phoneMessage")
-            .style.color = "green";
-    }
-}
+            document.getElementById("confirmation").innerHTML =
+                "Registration completed successfully!";
+        }
 
 
 
-function showFee() {
+        function validatePhone() {
 
-    let fee =
-        document.getElementById("eventSelect").value;
+            let phone =
+                document.getElementById("phone").value;
 
-    document.getElementById("feeDisplay")
-        .innerHTML =
-        "Event Fee: ₹" + fee;
-}
+            if (phone.length !== 10 || isNaN(phone)) {
+
+                document.getElementById("phoneMessage")
+                    .innerHTML =
+                    "Invalid phone number";
+
+                document.getElementById("phoneMessage")
+                    .style.color = "red";
+
+            } else {
+
+                document.getElementById("phoneMessage")
+                    .innerHTML =
+                    "Valid phone number";
+
+                document.getElementById("phoneMessage")
+                    .style.color = "green";
+            }
+        }
 
 
 
-function submitFeedback() {
+        function showFee() {
 
-    alert("Feedback submitted successfully!");
-}
+            let fee =
+                document.getElementById("eventSelect").value;
 
-
-
-function enlargeImage() {
-
-    document.getElementById("eventImage")
-        .classList.toggle("enlarged");
-}
+            document.getElementById("feeDisplay")
+                .innerHTML =
+                "Event Fee: ₹" + fee;
+        }
 
 
 
-function countCharacters() {
+        function submitFeedback() {
 
-    let text =
-        document.getElementById("feedbackText").value;
+            alert("Feedback submitted successfully!");
+        }
 
-    document.getElementById("charCount")
-        .innerHTML = text.length;
-}
-function videoReady() {
 
-    document.getElementById("videoMessage")
-        .innerHTML =
-        "Video ready to play!";
-}
-window.onbeforeunload = function () {
 
-    return
-    "You have unsaved changes. Are you sure you want to leave?";
-};
-</script>
+        function enlargeImage() {
+
+            document.getElementById("eventImage")
+                .classList.toggle("enlarged");
+        }
+
+
+
+        function countCharacters() {
+
+            let text =
+                document.getElementById("feedbackText").value;
+
+            document.getElementById("charCount")
+                .innerHTML = text.length;
+        }
+
+
+
+        function videoReady() {
+
+            document.getElementById("videoMessage")
+                .innerHTML =
+                "Video ready to play!";
+        }
+
+
+
+        window.onbeforeunload = function () {
+
+            return "You have unsaved changes. Are you sure you want to leave?";
+        };
+
+
+
+        function savePreference() {
+
+            let selectedEvent =
+                document.getElementById("eventType").value;
+
+            localStorage.setItem(
+                "preferredEvent",
+                selectedEvent
+            );
+
+            sessionStorage.setItem(
+                "sessionEvent",
+                selectedEvent
+            );
+        }
+
+
+
+        function loadPreference() {
+
+            let savedEvent =
+                localStorage.getItem("preferredEvent");
+
+            if (savedEvent) {
+
+                document.getElementById("eventType").value =
+                    savedEvent;
+            }
+        }
+
+
+
+        function clearPreferences() {
+
+            localStorage.clear();
+
+            sessionStorage.clear();
+
+            document.getElementById("eventType").value = "";
+
+            alert("Preferences cleared!");
+        }
+
+    </script>
 
 </body>
 
