@@ -326,6 +326,29 @@ button:hover {
     </button>
 
 </section>
+<!-- Video Invite Section -->
+
+<section id="videoInvite">
+
+    <h2>Community Event Promo Video</h2>
+
+    <video
+        id="promoVideo"
+        width="500"
+        controls
+        oncanplay="videoReady()">
+
+        <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4">
+
+        Your browser does not support video playback.
+
+    </video>
+
+    <p id="videoMessage"></p>
+
+</section>
 
         <!-- Message -->
 
@@ -437,7 +460,17 @@ function countCharacters() {
     document.getElementById("charCount")
         .innerHTML = text.length;
 }
+function videoReady() {
 
+    document.getElementById("videoMessage")
+        .innerHTML =
+        "Video ready to play!";
+}
+window.onbeforeunload = function () {
+
+    return
+    "You have unsaved changes. Are you sure you want to leave?";
+};
 </script>
 
 </body>
