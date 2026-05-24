@@ -26,6 +26,36 @@
     border: 3px solid black;
     border-radius: 10px;
     padding: 5px;
+    }
+    form {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
 }
 </style>
 </head>
@@ -159,6 +189,87 @@
 
 </section>
 
+<!-- Event Registration Form -->
+
+<section id="registration">
+
+    <h2>Event Registration Form</h2>
+
+    <form onsubmit="showMessage(); return false;">
+
+        <!-- Name -->
+
+        <label for="name">Full Name:</label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            required
+            autofocus>
+
+        <!-- Email -->
+
+        <label for="email">Email Address:</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required>
+
+        <!-- Date -->
+
+        <label for="date">Event Date:</label>
+
+        <input
+            type="date"
+            id="date"
+            required>
+
+        <!-- Event Type -->
+
+        <label for="eventType">Select Event:</label>
+
+        <select id="eventType" required>
+
+            <option value="">-- Choose an Event --</option>
+
+            <option>Music Festival</option>
+
+            <option>Food Carnival</option>
+
+            <option>Health Camp</option>
+
+            <option>Sports Meet</option>
+
+        </select>
+
+        <!-- Message -->
+
+        <label for="message">Message:</label>
+
+        <textarea
+            id="message"
+            rows="4"
+            placeholder="Write your message here..."></textarea>
+
+        <!-- Submit Button -->
+
+        <button type="submit">
+            Register
+        </button>
+
+        <br><br>
+
+        <!-- Output Message -->
+
+        <output id="confirmation"></output>
+
+    </form>
+
+</section>
+
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
@@ -173,6 +284,17 @@
     <footer>
         <p>© 2026 Local City Council</p>
     </footer>
+
+    <script>
+
+    function showMessage() {
+
+        document.getElementById("confirmation").innerHTML =
+            "Registration completed successfully!";
+
+    }
+
+</script>
 
 </body>
 
