@@ -57,6 +57,10 @@ button {
 button:hover {
     background-color: darkblue;
 }
+.enlarged {
+    transform: scale(1.5);
+    transition: 0.3s;
+}
 </style>
 </head>
 
@@ -244,6 +248,84 @@ button:hover {
             <option>Sports Meet</option>
 
         </select>
+        <!-- Event Feedback Section -->
+
+<section id="feedback">
+
+    <h2>Event Feedback</h2>
+
+    <!-- Phone Validation -->
+
+    <label for="phone">Phone Number:</label>
+
+    <input
+        type="text"
+        id="phone"
+        placeholder="Enter 10-digit phone number"
+        onblur="validatePhone()">
+
+    <p id="phoneMessage"></p>
+
+    <br>
+
+    <!-- Event Fee Display -->
+
+    <label for="eventSelect">Choose Event:</label>
+
+    <select id="eventSelect" onchange="showFee()">
+
+        <option value="">-- Select Event --</option>
+
+        <option value="100">Music Festival</option>
+
+        <option value="150">Food Carnival</option>
+
+        <option value="200">Sports Meet</option>
+
+    </select>
+
+    <p id="feeDisplay"></p>
+
+    <br>
+
+    <!-- Double Click Image -->
+
+    <h3>Double Click Image to Enlarge</h3>
+
+    <img
+        src="https://picsum.photos/200/130"
+        id="eventImage"
+        ondblclick="enlargeImage()"
+        class="gallery-img"
+        alt="Event Image">
+
+    <br><br>
+
+    <!-- Feedback Textarea -->
+
+    <label for="feedbackText">Feedback:</label>
+
+    <textarea
+        id="feedbackText"
+        rows="4"
+        cols="40"
+        onkeyup="countCharacters()"
+        placeholder="Write your feedback..."></textarea>
+
+    <p>
+        Characters Typed:
+        <span id="charCount">0</span>
+    </p>
+
+    <br>
+
+    <!-- Submit Button -->
+
+    <button onclick="submitFeedback()">
+        Submit Feedback
+    </button>
+
+</section>
 
         <!-- Message -->
 
@@ -293,6 +375,68 @@ button:hover {
             "Registration completed successfully!";
 
     }
+    function validatePhone() {
+
+    let phone =
+        document.getElementById("phone").value;
+
+    if (phone.length !== 10 || isNaN(phone)) {
+
+        document.getElementById("phoneMessage")
+            .innerHTML =
+            "Invalid phone number";
+
+        document.getElementById("phoneMessage")
+            .style.color = "red";
+
+    } else {
+
+        document.getElementById("phoneMessage")
+            .innerHTML =
+            "Valid phone number";
+
+        document.getElementById("phoneMessage")
+            .style.color = "green";
+    }
+}
+
+
+
+function showFee() {
+
+    let fee =
+        document.getElementById("eventSelect").value;
+
+    document.getElementById("feeDisplay")
+        .innerHTML =
+        "Event Fee: ₹" + fee;
+}
+
+
+
+function submitFeedback() {
+
+    alert("Feedback submitted successfully!");
+}
+
+
+
+function enlargeImage() {
+
+    document.getElementById("eventImage")
+        .classList.toggle("enlarged");
+}
+
+
+
+function countCharacters() {
+
+    let text =
+        document.getElementById("feedbackText").value;
+
+    document.getElementById("charCount")
+        .innerHTML = text.length;
+}
 
 </script>
 
