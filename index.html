@@ -443,6 +443,21 @@
     </section>
 
     <hr>
+    <!-- Geolocation Section -->
+
+<section id="location">
+
+    <h2>Find Nearby Events</h2>
+
+    <button onclick="findLocation()">
+        Find Nearby Events
+    </button>
+
+    <p id="locationResult"></p>
+
+</section>
+
+<hr>
 
     <!-- Contact Section -->
 
@@ -600,6 +615,82 @@
             alert("Preferences cleared!");
         }
 
+        function findLocation() {
+
+    // Check browser support
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(
+
+            showPosition,
+            showError,
+
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            }
+
+        );
+
+    } else {
+
+        document.getElementById("locationResult")
+            .innerHTML =
+            "Geolocation is not supported by this browser.";
+    }
+}
+
+
+
+function showPosition(position) {
+
+    let latitude = position.coords.latitude;
+
+    let longitude = position.coords.longitude;
+
+    document.getElementById("locationResult")
+        .innerHTML =
+
+        "Latitude: " + latitude +
+        "<br>Longitude: " + longitude;
+}
+function showError(error) {
+
+    switch (error.code) {
+
+        case error.PERMISSION_DENIED:
+
+            document.getElementById("locationResult")
+                .innerHTML =
+                "Location access denied by user.";
+
+            break;
+
+        case error.POSITION_UNAVAILABLE:
+
+            document.getElementById("locationResult")
+                .innerHTML =
+                "Location information unavailable.";
+
+            break;
+
+        case error.TIMEOUT:
+
+            document.getElementById("locationResult")
+                .innerHTML =
+                "Location request timed out.";
+
+            break;
+
+        default:
+
+            document.getElementById("locationResult")
+                .innerHTML =
+                "An unknown error occurred.";
+    }
+}
     </script>
 
 </body>
