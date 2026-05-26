@@ -1,0 +1,205 @@
+/* Universal Selector */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* =========================
+   BODY STYLES
+========================= */
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    background-color: #f0f4f7;
+
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    color: #222;
+
+    line-height: 1.8;
+}
+/* Paragraph and Description Styling */
+
+p {
+    font-size: 16px;
+
+    font-style: normal;
+
+    line-height: 1.8;
+
+    text-align: justify;
+
+    letter-spacing: 0.5px;
+}
+/* Element Selector for h2 */
+
+h2 {
+    color: darkblue;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   NAVIGATION STYLES
+========================= */
+
+nav {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* Navigation Links */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+
+/* Navigation Hover Effect */
+
+nav a:hover {
+    color: yellow;
+}
+
+
+/* =========================
+   WELCOME BANNER
+========================= */
+
+/* ID Selector for Main Header */
+
+#welcomeBanner {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Highlighted Event Text */
+
+/* Class Selector for Event Cards */
+/* Grouping Selector */
+
+h3,
+p {
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+.highlight {
+    
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery-img {
+    width: 200px;
+    height: 130px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+/* =========================
+   FORM STYLES
+========================= */
+
+form {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+
+
+/* Input Fields */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   BUTTON STYLES
+========================= */
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Button Hover Effect */
+
+button:hover {
+    background-color: darkblue;
+}
+
+
+/* Enlarged Image Effect */
+
+.enlarged {
+    transform: scale(1.5);
+    transition: 0.3s;
+}
+
+
+/* =========================
+   VIDEO SECTION
+========================= */
+
+.promo-video {
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid gray;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+}
+
+
+/* Video Invite Section */
+
+#videoInvite {
+    text-align: center;
+}
+
+
+/* =========================
+   GENERAL SECTION STYLES
+========================= */
+
+section {
+    margin-top: 30px;
+}
